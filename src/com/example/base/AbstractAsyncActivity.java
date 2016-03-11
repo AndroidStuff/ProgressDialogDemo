@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.util.Log;
 
-public class AbstractAsyncActivity extends Activity {
+public abstract class AbstractAsyncActivity extends Activity {
 	protected static final String TAG = AbstractAsyncActivity.class.getSimpleName();
 
 	private ProgressDialog progressDialog;
