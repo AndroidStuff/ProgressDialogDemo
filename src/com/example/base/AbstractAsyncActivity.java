@@ -6,6 +6,13 @@ import android.app.ProgressDialog;
 public class AbstractAsyncActivity extends Activity {
 
 	private ProgressDialog progressDialog;
+	private boolean destroyed = false;
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		destroyed = true;
+	}
 
 	protected void showProgressDialog(CharSequence message) {
 		if (progressDialog == null) {
@@ -17,7 +24,7 @@ public class AbstractAsyncActivity extends Activity {
 	}
 
 	protected void dismissProgressDialog() {
-		if (progressDialog != null) {
+		if (progressDialog != null && !destroyed) {
 			progressDialog.dismiss();
 		}
 	}
