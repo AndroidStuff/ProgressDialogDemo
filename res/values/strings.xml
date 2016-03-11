@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ProgressDialogDemo</string>
+    <string name="hello_world">Demo - Progress Bar Dialog</string>
+    <string name="progress_bar_demo">Click to see Progress Bar Dialog</string>
+
+</resources>
