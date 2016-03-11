@@ -1,39 +1,22 @@
 package com.example.progressdialogdemo;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
+import com.example.base.AbstractAsyncActivity;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends Activity {
-	private ProgressDialog progressDialog;
-
+public class MainActivity extends AbstractAsyncActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 	}
 
+	//onClick Event Handler
 	public void showProgressBar(View v) {
 		new RandomAsyncTask().execute();
 	}
-
-	private void showProgressDialog(CharSequence message) {
-		if (progressDialog == null) {
-			progressDialog = new ProgressDialog(this);
-			progressDialog.setIndeterminate(true);
-		}
-		progressDialog.setMessage(message);
-		progressDialog.show();
-	}
-
-	private void dismissProgressDialog() {
-		if (progressDialog != null) {
-			progressDialog.dismiss();
-		}
-	}
-
 
 	class RandomAsyncTask extends AsyncTask<Void, Void, Void> {
 
